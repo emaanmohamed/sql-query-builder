@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 
 Route::get('query1', [QueryController::class, 'query1']);
+Route::get('query2', [QueryController::class, 'query2']);
