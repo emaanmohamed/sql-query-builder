@@ -1,5 +1,5 @@
 steps to test query1 :- 
-1- php artisan migrate
+1- php artisan migrate 
 2- php artisan tinker
    *User::factory()->count(10)->create() 
    *Product::factory()->count(10)->create() 
