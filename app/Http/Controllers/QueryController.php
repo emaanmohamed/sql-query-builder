@@ -18,4 +18,17 @@ class QueryController extends Controller
            ->get();
        return  $res;
     }
+
+    public function query2()
+    {
+        $res = DB::table('products AS p')
+            ->leftJoin('orders AS o', 'p.id', '=', 'o.product_id')
+            ->select('p.name', DB::raw('SUM(o.quantity) as total_quantity'), DB::raw('AVG(p.rating) as average_rating'))
+            ->groupBy('p.name')
+            ->orderBy('total_quantity', 'desc')
+            ->limit(5)
+            ->get();
+        return  $res;
+
+    }
 }
